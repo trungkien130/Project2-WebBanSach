@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Web_thuc_tap_chuyen_de_1.Models.Slide>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="list-custom-container">
+    <h2>Danh sách slide</h2>
+
+    <p>
+        @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn-create" })
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img)
+            </th>
+            <th>Chức năng</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @if (!string.IsNullOrEmpty(item.Img))
+            {
+                <img src="@Url.Content("~/Img/" + item.Img)" alt="Image" style="width: 100px; height: auto;" /> }
+            else
+            {
+                <span>No Image</span>}
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Chi Tiết", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.ID })
+        </td>
+    </tr>
+        }
+
+    </table>
+    </div>

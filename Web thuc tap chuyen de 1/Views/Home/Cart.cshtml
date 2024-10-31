@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Web_thuc_tap_chuyen_de_1.Models.Cart>
+
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var tong = Model.Sum(item => item.Tong);
+}
+<div class="cart-form">
+    <h2>Giỏ hàng</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SoLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img)
+            </th>
+@*            <th>
+                @Html.DisplayNameFor(model => model.KhachHang.HoTen)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Sach.TenSach)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @String.Format("{0:N0} VNĐ", item.DonGia)
+        </td>
+        <td>
+            @String.Format("{0:N0} VNĐ", item.Tong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Img)
+        </td>
+@*        <td>
+            @Html.DisplayFor(modelItem => item.KhachHang.HoTen)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Sach.TenSach)
+        </td>
+        <td>
+            @using (Html.BeginForm("DeleteFromCart", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.Hidden("id", item.Id)
+                <button type="submit" class="btn btn-danger">Xóa</button>
+            }
+        </td>
+    </tr>
+        }
+
+    </table>
+    </div>
+<div class="form-sum-cart">
+    <p>Tổng</p>
+    <h1>  @String.Format("{0:N0} VNĐ", tong)</h1>
+    <button type="submit" class="btn btn-primary">Mua</button>
+</div>

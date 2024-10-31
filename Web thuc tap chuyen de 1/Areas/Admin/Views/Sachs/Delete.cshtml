@@ -1,0 +1,85 @@
+﻿@model Web_thuc_tap_chuyen_de_1.Models.Sach
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="list-custom-create-container">
+    <div class="btn-back">
+        <h2>Xóa khách hàng</h2>
+
+        @Html.ActionLink("Trở về", "Index")
+    </div>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TenSach)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenSach)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SoLuong)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SoLuong)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DonGia)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DonGia)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Img)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Img)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TacGia)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TacGia)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MoTa)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MoTa)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DanhMucSach.TenDanhMuc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DanhMucSach.TenDanhMuc)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> 
+            </div>
+        }
+    </div>
+    </div>

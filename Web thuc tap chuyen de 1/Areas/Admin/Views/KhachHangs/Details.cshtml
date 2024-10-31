@@ -1,0 +1,82 @@
+﻿@model Web_thuc_tap_chuyen_de_1.Models.KhachHang
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="list-custom-create-container">
+    <div class="btn-back">
+        <h2>Chi tiết khách hàng</h2>
+        <p> @Html.ActionLink("Sửa", "Edit", new { id = Model.MaKH }) @Html.ActionLink("Trở về", "Index")</p> 
+    </div>
+    <div>
+  
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.HoTen)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HoTen)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SDT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SDT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Password)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Password)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DiaChi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DiaChi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgaySinh)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgaySinh)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayDangKy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayDangKy)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TrangThai, new { htmlAttributes = new { style = "color:" + (Model.TrangThai == true ? "lightgreen" : "red") } })
+            </dd>
+
+        </dl>
+    </div>
+
+</div>

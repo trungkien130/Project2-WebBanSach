@@ -1,0 +1,75 @@
+﻿@model Web_thuc_tap_chuyen_de_1.Models.KhachHang
+
+@{
+    ViewBag.Title = "CustomDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="Customer-detail">
+    <h2>Chi tiết khách hàng</h2>
+    <p>
+        @Html.ActionLink("Trở về", "Index")
+        @Html.ActionLink("Chỉnh Sửa","DetailEdit", "Home", new { id = Model.MaKH }, null)
+    </p>
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.HoTen)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HoTen)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SDT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SDT)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DiaChi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DiaChi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgaySinh)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgaySinh)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayDangKy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayDangKy)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Password)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Password)
+            </dd>
+
+        </dl>
+    </div>
+
+</div>

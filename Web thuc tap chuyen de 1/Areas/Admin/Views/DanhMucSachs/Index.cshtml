@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Web_thuc_tap_chuyen_de_1.Models.DanhMucSach>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+
+}
+<div class="list-custom-container">
+    <h2>Danh sách khách hàng</h2>
+
+    <p>
+        @Html.ActionLink("Tạo mới", "Create", null, new { @class = "btn-create" })
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenDanhMuc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </th>
+            <th>Chức năng</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDanhMuc)
+        </td>
+        <td>
+            @if (item.TrangThai == true)
+            {
+                <span style="color:lightgreen">Hoạt động</span>
+            }
+            else
+            {
+                <span style="color:red">Không hoạt động</span>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+        }
+
+    </table>
+    </div>

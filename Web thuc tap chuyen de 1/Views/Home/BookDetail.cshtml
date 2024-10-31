@@ -1,0 +1,29 @@
+﻿
+
+@model Web_thuc_tap_chuyen_de_1.Models.Sach
+
+@{
+    ViewBag.Title = "Book Detail - " + Model.TenSach;
+}
+<div class="book-details-page">
+    <div>
+        <img src="@Url.Content("~/Img/" + Model.Img)" alt="@Model.TenSach" style="max-width: 300px;" class="book-details-img"/>
+    </div>
+    <div>
+        <h3><strong>Tên Sách:</strong>@Model.TenSach</h3>
+        <h4><strong>Giá:</strong> @String.Format("{0:N0} VNĐ", Model.DonGia)</h4>
+        <h4><strong>Mô Tả:</strong> @Model.MoTa</h4>
+        <h4><strong>Tác Giả:</strong> @Model.TacGia</h4>
+
+    </div>
+    <div class="book-details-btn">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Trở về</a> |
+        @using (Html.BeginForm("Cart", "Home", FormMethod.Post))
+        {
+            <input type="hidden" name="id" value="@Model.MaSach" />
+            <input type="number" id="quantity" name="quantity" value="1" min="1" style="width: 60px;" />
+            <button type="submit" class="btn btn-primary">Thêm vào giỏ hàng</button>
+        }|
+        <button class="btn btn-primary">Mua hàng</button>
+    </div>
+</div>
