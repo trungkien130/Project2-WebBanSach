@@ -131,3 +131,40 @@
 .list-custom-container td, .list-custom-container th {
     border: 1px solid black;
 }
+.display-custom-admin {
+    width: 20%;
+    height: 30vh;
+    background-color: red;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    margin-left: 48px;
+    margin-top: 20px;
+}
+.display-custom-admin a{
+    text-decoration:none;
+    color:white;
+}
+    .display-custom-admin a:hover{
+        transform:scale(1.05);
+    }
+.list-display-container {
+    width: 78%;
+    position: absolute;
+    left: 19%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    top: 10%;
+}
+.display-admin-cart{
+    background-color:#006D77;
+
+}
+.display-admin-cart h3 {
+        color: #F54824;
+    }
+.display-admin-book{
+    background-color:#064789;
+}

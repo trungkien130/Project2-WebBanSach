@@ -148,6 +148,7 @@
     <Compile Include="Models\DanhMucSach.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DashboardViewModel.cs" />
     <Compile Include="Models\Database.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

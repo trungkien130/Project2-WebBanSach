@@ -43,7 +43,15 @@
             @String.Format("{0:N0} VNĐ", item.Tong)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Img)
+            @if (!string.IsNullOrEmpty(item.Img))
+            {
+                <img src="@Url.Content(item.Img)" alt="Book Image" style="width: 100px; height: auto;" />
+            }
+            else
+            {
+                <span>No Image Available</span>
+            }
+
         </td>
 @*        <td>
             @Html.DisplayFor(modelItem => item.KhachHang.HoTen)

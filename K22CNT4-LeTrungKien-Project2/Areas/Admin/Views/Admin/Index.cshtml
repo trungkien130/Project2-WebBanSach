@@ -1,0 +1,23 @@
+﻿@model Web_thuc_tap_chuyen_de_1.Models.DashboardViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="list-display-container">
+    <div class="display-custom-admin">
+            <a href="@Url.Action("Index", "KhachHangs")"><h3>Tổng số khách hàng: @Model.KhachHang</h3></a>
+        </div>
+@*       <div class="display-custom-admin">
+            <a href="@Url.Action("Index", "DanhMucSaches")"><h3>Tổng số danh mục sách: @Model.DanhMucSach</h3></a>
+        </div>*@
+        <div class="display-custom-admin display-admin-cart">
+            <a href="@Url.Action("Index", "Carts")"><h3>Tổng số giỏ hàng: @Model.GioHang</h3></a>
+        </div>
+        <div class="display-custom-admin display-admin-book">
+            <a href="@Url.Action("Index", "Sachs")"><h3>Tổng số sách: @Model.Sach</h3></a>
+        </div>
+@*        <div class="display-custom-admin">
+            <a href="@Url.Action("Index", "Slides")"><h3>Tổng số slide: @Model.Slide</h3></a>
+        </div>*@
+</div>
